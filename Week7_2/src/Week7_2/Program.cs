@@ -151,6 +151,21 @@ namespace Week7_2
             }
             File.Create("cms.db");
 
+            Console.WriteLine("WELCOME TO CMS DATA DOMAIN");
+            Console.WriteLine("Usage examples:");
+            Console.WriteLine("add Pages {UrlName: <url>, Content: <content>}");
+            Console.WriteLine("add NavLinks {ParentPageId: <id1>, PageId: <id2>}");
+            Console.WriteLine("add RelatedPages {FirstPageId: <id1>, SecondPageId: <id2>}");
+            Console.WriteLine("update Pages <id> {UrlName: <url>, Content: <content>}");
+            Console.WriteLine("update NavLinks <id> {ParentPageId: <id1>, PageId: <id2>}");
+            Console.WriteLine("update RelatedPages <id> {FirstPageId: <id1>, SecondPageId: <id2>}");
+            Console.WriteLine("delete Pages <id>");
+            Console.WriteLine("delete NavLinks <id>");
+            Console.WriteLine("delete RelatedPages <id>");
+            Console.WriteLine("list all");
+            Console.WriteLine("quit");
+            Console.WriteLine();
+
             using (var db = new CmsContext())
             {
                 db.Database.Migrate();
